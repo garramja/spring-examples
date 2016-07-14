@@ -26,16 +26,16 @@ Service layer
 ### pom.xml
 It's mandatory include spring-dev-tools dependecy to use livereload feature.
 
-'''
+```
  <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-devtools</artifactId>
  </dependency>
- '''
+```
 
 See that spring maven plugin it's configured with fork = true because app execution must be in a diferent jvm that maven.
 
-'''
+```
  <plugin>
    <groupId>org.springframework.boot</groupId>
    <artifactId>spring-boot-maven-plugin</artifactId>
@@ -43,7 +43,7 @@ See that spring maven plugin it's configured with fork = true because app execut
       <fork>true</fork>
    </configuration>
  </plugin>
-'''
+```
 
 If you run application with command line you must type:
 > $ mvn spring-boot:run -Dfork=true
