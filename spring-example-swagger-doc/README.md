@@ -28,7 +28,7 @@ pom.xml
 Application.java
 >	@Bean
 >	public Docket recipeApi() {
->		ApiInfo apiInfo = new ApiInfo("API recipe example","1.0.0","1.0.0","Licencia","Javier García <javier.garcia@sm2baleares.es>","API recipe","");
+>		ApiInfo apiInfo = new ApiInfo("API recipe example","1.0.0","1.0.0","Licencia","Javier García ''<javier.garcia@sm2baleares.es''>","API recipe","");
 >		return new Docket(DocumentationType.SWAGGER_2)
 >				.apiInfo(apiInfo)
 >               .groupName("API recipe")
