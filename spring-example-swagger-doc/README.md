@@ -14,32 +14,34 @@ The project structure is like spring-example-rest-service on this serie of exmap
 We need add springfox dependencies and inject @Bean on SpronBootApplication class configuration.
 
 pom.xml
->		<dependency>
->            <groupId>io.springfox</groupId>
->            <artifactId>springfox-swagger2</artifactId>
->            <version>2.5.0</version>
->        </dependency>
->        <dependency>
->            <groupId>io.springfox</groupId>
->            <artifactId>springfox-swagger-ui</artifactId>
->            <version>2.5.0</version>
->        </dependency>
+
+		<dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.5.0</version>
+        </dependency>
 
 Application.java
->	@Bean
->	public Docket recipeApi() {
->		ApiInfo apiInfo = new ApiInfo("API recipe example","1.0.0","1.0.0","Licencia","Javier García javier.garcia@sm2baleares.es","API recipe","");
->		return new Docket(DocumentationType.SWAGGER_2)
->				.apiInfo(apiInfo)
->               .groupName("API recipe")
->                .select()
->                .apis(RequestHandlerSelectors.any())
->                .paths(PathSelectors.any())
->                .build()
->                .pathMapping("/")
->				.tags(new Tag("Recipe service", "All services for recipe API"))
->				.enableUrlTemplating(true);
->	}
+
+	@Bean
+	public Docket recipeApi() {
+		ApiInfo apiInfo = new ApiInfo("API recipe example","1.0.0","1.0.0","Licencia","Javier García javier.garcia@sm2baleares.es","API recipe","");
+		return new Docket(DocumentationType.SWAGGER_2)
+				.apiInfo(apiInfo)
+               .groupName("API recipe")
+                .select()
+                .apis(RequestHandlerSelectors.any())
+                .paths(PathSelectors.any())
+                .build()
+                .pathMapping("/")
+				.tags(new Tag("Recipe service", "All services for recipe API"))
+				.enableUrlTemplating(true);
+	}
 
 
 ## Starting application
@@ -56,4 +58,4 @@ Default port is configured to 8090. You are able to change on  > spring-example-
 > $ java -jar <yourOutputJar.jar> (You must previously have generated your jar).
 
 ## Viewing and testing api documentation
-* http://localhosts:8090/swagger-ui.html (http://localhosts:8090/swagger-ui.html)
+> http://localhosts:8090/swagger-ui.html
