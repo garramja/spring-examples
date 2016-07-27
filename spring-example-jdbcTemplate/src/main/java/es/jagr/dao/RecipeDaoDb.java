@@ -3,6 +3,8 @@ package es.jagr.dao;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -24,7 +26,7 @@ public class RecipeDaoDb implements RecipeDao {
     public Recipe getById(String id) {
 
         return jdbcTemplate.queryForObject(
-                "SELECT ID FROM RECIPES WHERE ID = ?"
+                "SELECT ID, NAME, STARS FROM RECIPES WHERE ID = ?"
                 , BeanPropertyRowMapper.newInstance(Recipe.class)
                 , id);
     }
