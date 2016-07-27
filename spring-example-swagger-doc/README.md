@@ -13,6 +13,7 @@ The project structure is like spring-example-rest-service on this serie of exmap
 ## Add auto generate swagger documentation
 We need add springfox dependencies and inject @Bean on SpronBootApplication class configuration.
 
+pom.xml
 >		<dependency>
 >            <groupId>io.springfox</groupId>
 >            <artifactId>springfox-swagger2</artifactId>
@@ -24,9 +25,10 @@ We need add springfox dependencies and inject @Bean on SpronBootApplication clas
 >            <version>2.5.0</version>
 >        </dependency>
 
+Application.java
 >	@Bean
 >	public Docket recipeApi() {
->		ApiInfo apiInfo = new ApiInfo("API recipe example","1.0.0","1.0.0","Licencia","Javier García <javier.garcia@sm2baleares.es>","API recipe","");
+>		ApiInfo apiInfo = new ApiInfo("API recipe example","1.0.0","1.0.0","Licencia","Javier García javier.garcia@sm2baleares.es","API recipe","");
 >		return new Docket(DocumentationType.SWAGGER_2)
 >				.apiInfo(apiInfo)
 >               .groupName("API recipe")
