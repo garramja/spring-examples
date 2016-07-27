@@ -1,26 +1,24 @@
 # spring-example-jdbcTemplate
 This example show how JdbTemplate help us to access database throw JDBC. This example use Java SQL database H2 Embedded  in memory.
 
-* DELETE /recipes/{id} - Deletes recipe with specific {id}
-
 ## Project structure
-The project structur is the same like spring-example-rest-service with some changes.
+The project structure is the same like spring-example-rest-service with some changes.
 
 ### Database configuration and JDBC support
 We have added to pom.xml
 
->	<dependency>
->            <groupId>org.springframework</groupId>
->            <artifactId>spring-jdbc</artifactId>
->        </dependency>
->        <dependency>
->            <groupId>com.h2database</groupId>
->            <artifactId>h2</artifactId>
->        </dependency>
->    </dependencies>
+	<dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
+    </dependencies>
 
 
-### Database initializtion.
+### Database initialization.
 When springboot starts, it scans resource package to find db files resources.
 * schema.sql: with this file into resources, sprinboot is able to scan this resource and recreate schema.
 * data.sql: like schema file, springboot get this file to insert values on schema.
@@ -32,7 +30,8 @@ In this example, RecipeDaoDb is added to Dao package. This Class is configured a
 See that RecipeDaoDb and RecipeDaoMap have @Profile annotation with diferent values. This example use profiles for use RecipeDaoDb or RecipeDaoMap depending on spring.profiles.active value on application.properties.
 
 ## Starting application
-Default port is configured to 8090. You are able to change on  > spring-example-rest-service\src\main\resources\application.properties
+Default port is configured to 8090. You are able to change on  
+> spring-example-rest-service\src\main\resources\application.properties
 
 #### Running from IDE (used intelliJ, but you can use your favourite IDE)
 * Import maven project
